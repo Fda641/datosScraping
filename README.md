@@ -15,7 +15,7 @@ Este proyecto extrae y visualiza datos de licitaciones de proyectos de construcc
   - [BOE (Boletín Oficial del Estado)](https://www.boe.es/)
   - [Google Maps](https://maps.google.com)
 
-## 📌 Instalación y configuración
+## 📌 Instalación y configuración 
 
 1. Clonar el repositorio:
    
