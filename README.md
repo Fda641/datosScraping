@@ -69,3 +69,6 @@ https://dbeaver.io/
 ## 📝 Licencia
 
 Este proyecto está bajo la licencia MIT. Ver el archivo LICENSE para más detalles.
+=======
+# datosScraping
+>>>>>>> 194c087a40cf0e87e0d1b7ca3381a5c33e0c5eed
