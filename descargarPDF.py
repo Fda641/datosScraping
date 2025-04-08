@@ -4,7 +4,7 @@ import sys
 import requests
 import re
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Función para verificar si las librerías necesarias están instaladas
 def verificar_librerias():
@@ -14,7 +14,7 @@ def verificar_librerias():
         print("Todas las librerías necesarias están instaladas.\n")
     except ImportError as e:
         print(f"Error: Falta una librería necesaria: {e.name}")
-        print("Instale las librerías necesarias con el siguiente comando:")
+        print("Instale las librerías necesarias con el siguiente comando: ")
         print("pip install requests beautifulsoup4")
         sys.exit(1)  # Termina la ejecución del script
 
@@ -33,13 +33,18 @@ def verificar_carpeta():
     print(f"Ruta de la carpeta: {ruta_carpeta}\n")
     return ruta_carpeta
 
-# Función para solicitar una fecha al usuario en el formato YYYY/MM/DD
-# Valida que el formato ingresado sea correcto
+# Función para obtener la fecha y asegurarse de que no sea domingo
 def obtener_fecha():
     while True:
         fecha_str = input("Ingrese la fecha en formato YYYY/MM/DD: ")
         try:
             fecha = datetime.strptime(fecha_str, "%Y/%m/%d")  # Valida el formato de fecha
+            # Verifica si la fecha es un domingo
+            if fecha.weekday() == 6:  # 6 corresponde a domingo
+                print("La fecha ingresada es un domingo. Se ajustará al sábado anterior.")
+                # Ajusta la fecha al sábado (restando 1 día)
+                fecha -= timedelta(days=1)
+                fecha_str = fecha.strftime("%Y/%m/%d")
             return fecha_str
         except ValueError:
             print("Formato incorrecto. Intente nuevamente.")
