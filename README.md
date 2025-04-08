@@ -72,3 +72,21 @@ Este proyecto está bajo la licencia MIT. Ver el archivo LICENSE para más detal
 =======
 # datosScraping
 >>>>>>> 194c087a40cf0e87e0d1b7ca3381a5c33e0c5eed
+┌─────────────────────┐
+│ descargarPDF.py     │
+│ (descarga PDFs BOE) │
+└─────────┬───────────┘
+          │
+          ▼
+┌─────────────────────┐
+│ pdf_processor.py    │
+│ (procesa PDFs y     │
+│ guarda datos en DB) │
+└─────────┬───────────┘
+          │
+          ▼
+┌─────────────────────┐
+│ app.py              │
+│ (muestra datos en   │
+│ interfaz web)       │
+└─────────────────────┘
