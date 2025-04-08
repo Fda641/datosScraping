@@ -21,7 +21,7 @@ class PDFData(Base):
 Base.metadata.create_all(engine)
 
 # Palabras clave
-PALABRAS_CLAVE = ["paredes ventiladas", "falsos techos", "fachadas ventiladas", "techo registrable"]
+PALABRAS_CLAVE = ["paredes ventiladas", "falsos techos", "fachadas ventiladas", "techo registrable", "decreto"]
 
 def extraer_info_pdf(pdf_path):
     with fitz.open(pdf_path) as doc:
